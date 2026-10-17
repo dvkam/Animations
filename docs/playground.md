@@ -33,3 +33,9 @@ The pstack and Matt Pocock code reviews found a skip-link routing conflict. The 
 Desktop and mobile screenshots were inspected. A frozen-lockfile install, lint, formatting, strict type checks, all builds, and browser tests passed. The browser suite completed with 83 passing tests and three intentional device-specific skips. The six new playground cases passed on desktop and mobile Chromium. Hosting itself is not verified because this work remains local and has not been pushed.
 
 The Pages actions were checked against their latest GitHub releases: configure-pages 6.0.0, upload-pages-artifact 5.0.0, and deploy-pages 5.0.1.
+
+## Visual refinement
+
+The shell uses a neutral canvas, fine dividers, and a compact heading. An unfilled sidebar selection lets the demo supply the color. Instructions remain visible; a native About this animation disclosure contains implementation and accessibility notes. The preview has no padded card around it. Pointer presses receive small feedback, while keyboard navigation and reduced motion remain immediate. No page transition was added.
+
+The Emil design engineering review guided this revision. Lint, the playground type check and production build, and all six existing playground browser tests passed. Desktop and mobile screenshots were inspected.

@@ -13,3 +13,5 @@ This is a local draft. No branch or PR has been pushed or published.
 ## Playground and Pages
 
 Add a responsive sidebar playground with one isolated iframe per selected demo. Generate descriptions and instructions from the demo READMEs. Support direct links, browser history, preview width controls, reload, and standalone viewing. Build one static artifact and deploy it to the shared GitHub Pages site after checks pass on the default branch or a manual run. Pull requests build and test without deployment. Pages must be enabled in repository settings after push.
+
+Simplify the playground shell with neutral colors, compact typography, an unfilled selection marker, and a larger preview. Keep instructions visible and place implementation and accessibility notes in a native disclosure.

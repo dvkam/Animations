@@ -40,7 +40,7 @@ function Playground() {
       </a>
       <aside className={styles.sidebar}>
         <a className={styles.brand} href="#apple-animation">
-          Animations<span>A collection of small experiments</span>
+          Animations<span>{demos.length} studies in motion</span>
         </a>
         <button
           ref={menuRef}
@@ -58,7 +58,7 @@ function Playground() {
           data-open={menuOpen}
         >
           <p className={styles.label}>
-            Explore <span>{demos.length} demos</span>
+            Index <span>01 / {String(demos.length).padStart(2, "0")}</span>
           </p>
           <ol>
             {demos.map((item, index) => (
@@ -78,15 +78,9 @@ function Playground() {
             ))}
           </ol>
         </nav>
-        <p className={styles.sidebarNote}>
-          Built with React and native CSS.
-          <br />
-          One experiment at a time.
-        </p>
       </aside>
       <main className={styles.main}>
         <header className={styles.heading}>
-          <p className={styles.eyebrow}>Animation playground</p>
           <h1>{demo.title}</h1>
           <p>{demo.description}</p>
         </header>
@@ -123,28 +117,30 @@ function Playground() {
               title={`${demo.title} interactive demo`}
             />
           </div>
-          <p className={styles.hint}>
-            Interact inside the preview. The 390px setting changes its width, not its input device.
-          </p>
         </section>
-        <div className={styles.notes}>
-          <section>
-            <h2>Try it</h2>
-            <p>{demo.interaction}</p>
-          </section>
-          <section>
-            <h2>How it works</h2>
-            <p>{demo.how}</p>
-          </section>
-          <section>
-            <h2>Motion and access</h2>
-            <p>{demo.accessibility}</p>
-            <p>The preview follows your system’s reduced motion setting.</p>
-          </section>
-        </div>
+        <p className={styles.instruction}>{demo.interaction}</p>
+        <details className={styles.details} key={slug}>
+          <summary>
+            About this animation <span aria-hidden="true">+</span>
+          </summary>
+          <div className={styles.notes}>
+            <section>
+              <h2>How it works</h2>
+              <p>{demo.how}</p>
+            </section>
+            <section>
+              <h2>Motion and access</h2>
+              <p>{demo.accessibility}</p>
+              <p>
+                The preview follows your system’s reduced motion setting. The 390px setting changes
+                its width, not its input device.
+              </p>
+            </section>
+          </div>
+        </details>
         <footer className={styles.footer}>
           <a href={`https://github.com/dvkam/Animations/tree/HEAD/apps/${demo.slug}`}>
-            Read the source and credits ↗
+            Source and credits ↗
           </a>
         </footer>
       </main>
