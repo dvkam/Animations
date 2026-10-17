@@ -77,3 +77,7 @@ The demo READMEs preserve every original source link. The review could read the 
 ## Review records
 
 Read the [code and design review](docs/review.md), [dependency decisions](docs/dependencies.md), [verification results](docs/verification.md), and [baseline comparison](docs/fidelity.md). The [PR description](docs/pr-draft.md) is a local draft.
+
+## Playground
+
+Run `pnpm playground` to build and browse all demos at http://127.0.0.1:4173. Each demo has its own preview, short description, instructions, and implementation notes. See [playground and GitHub Pages setup](docs/playground.md).

@@ -9,3 +9,7 @@ Validation includes strict types, lint, format, all 14 production builds, 77 app
 Nx is deferred because the current build graph does not justify it. The original third-party image sources remain credited in [asset sources](asset-sources.md).
 
 This is a local draft. No branch or PR has been pushed or published.
+
+## Playground and Pages
+
+Add a responsive sidebar playground with one isolated iframe per selected demo. Generate descriptions and instructions from the demo READMEs. Support direct links, browser history, preview width controls, reload, and standalone viewing. Build one static artifact and deploy it to the shared GitHub Pages site after checks pass on the default branch or a manual run. Pull requests build and test without deployment. Pages must be enabled in repository settings after push.
