@@ -1,0 +1,37 @@
+.frame {
+  display: block;
+  overflow: hidden;
+  margin: 8px;
+  width: calc(100% - 16px);
+  max-width: 320px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+.frame[data-active="true"] img {
+  transform: scale(1.3) rotate(5deg);
+}
+.frame:focus-visible {
+  outline: 3px solid #1769aa;
+  outline-offset: 4px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .frame:hover img {
+    transform: scale(1.3) rotate(5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .frame img,
+  .frame[data-active="true"] img,
+  .frame:hover img {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,73 @@
+.demo {
+  font-family: sans-serif;
+  text-align: center;
+  overflow-x: clip;
+}
+.spacer {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  background: #eee;
+}
+.stage {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-block: 4rem;
+  box-sizing: border-box;
+}
+.stack {
+  display: grid;
+  width: clamp(150px, 40vw, 380px);
+}
+.picture {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  border: 1px solid #000;
+  transition: transform 0.4s ease-in-out;
+}
+.picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.picture[data-position="left"] {
+  transform: rotate(-4deg) translateX(calc(-1 * clamp(25%, 20vw, 75%)));
+  z-index: 1;
+}
+.picture[data-position="center"] {
+  z-index: 2;
+  transition-delay: 0.1s;
+}
+.picture[data-position="right"] {
+  transform: rotate(4deg) translateX(clamp(25%, 20vw, 75%));
+  z-index: 1;
+  transition-delay: 0.2s;
+}
+.stack[data-active="true"] .picture[data-position="left"] {
+  transform: rotate(-6deg) translateX(calc(-1 * clamp(25%, 20vw, 75%))) scale(1.2);
+}
+.stack[data-active="true"] .picture[data-position="center"] {
+  transform: scale(1.2);
+}
+.stack[data-active="true"] .picture[data-position="right"] {
+  transform: rotate(6deg) translateX(clamp(25%, 20vw, 75%)) scale(1.2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .picture {
+    transition: none;
+  }
+  .stack[data-active] .picture[data-position="left"] {
+    transform: rotate(-4deg) translateX(-35%);
+  }
+  .stack[data-active] .picture[data-position="center"] {
+    transform: none;
+  }
+  .stack[data-active] .picture[data-position="right"] {
+    transform: rotate(4deg) translateX(35%);
+  }
+}

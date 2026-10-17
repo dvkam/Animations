@@ -1,0 +1,67 @@
+.page {
+  font-family: sans-serif;
+  text-align: center;
+}
+.button {
+  position: relative;
+  isolation: isolate;
+  background: #7983ff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+.position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.glow {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle closest-side, pink, transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+.label {
+  position: relative;
+}
+.button:focus-visible {
+  outline: 3px solid #202c81;
+  outline-offset: 4px;
+}
+.button:focus-visible .position {
+  left: 50%;
+  top: 50%;
+  transform: none !important;
+}
+.button:focus-visible .glow {
+  transform: translate(-50%, -50%) scale(1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .glow {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glow {
+    transition: none;
+  }
+  .position {
+    left: 50%;
+    top: 50%;
+    transform: none !important;
+  }
+}

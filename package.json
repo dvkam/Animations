@@ -1,0 +1,30 @@
+{
+  "name": "animations-workspace",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @animations/apple-animation dev",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "tsc --noEmit && pnpm -r --if-present typecheck",
+    "lint": "oxlint --deny-warnings . && node scripts/check-boundaries.mjs",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "test": "playwright test",
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm build && pnpm test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "oxfmt": "0.73.0",
+    "oxlint": "1.88.0",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  },
+  "engines": {
+    "node": ">=24.21.0"
+  },
+  "packageManager": "pnpm@12.14.0"
+}

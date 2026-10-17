@@ -1,0 +1,50 @@
+.page {
+  font-family: sans-serif;
+  text-align: center;
+}
+.page h1 {
+  margin-block: 0.83em;
+  font-size: 1.5em;
+}
+.typewriter {
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: clamp(0.75rem, 3vw, 1rem);
+}
+.text {
+  max-width: 0;
+  animation: typing 3s infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.typewriter::after {
+  content: " |";
+  white-space: pre;
+  animation: blink 1s step-end infinite;
+}
+@keyframes typing {
+  75%,
+  100% {
+    max-width: 27ch;
+  }
+}
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .text {
+    animation: none;
+    max-width: none;
+  }
+  .typewriter::after {
+    animation: none;
+  }
+}

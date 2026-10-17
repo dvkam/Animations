@@ -1,0 +1,61 @@
+.demo {
+  width: fit-content;
+  max-width: calc(100% - 10vmin);
+  margin: auto;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: clamp(1.5rem, 12vmin, 6rem);
+  color: #000;
+}
+.section {
+  box-sizing: border-box;
+  width: calc(100% + 10vmin);
+  overflow: hidden;
+  padding: 2vmin 0;
+}
+.section + .section {
+  box-sizing: border-box;
+  width: calc(100% + 10vmin);
+  border-top: 1vmin solid #000;
+}
+.demo p {
+  margin: 0;
+  line-height: normal;
+}
+.muted {
+  color: rgb(0 0 0 / 50%);
+}
+.top {
+  transform: translateY(200%);
+  animation: show-top 1s 0.5s forwards;
+}
+.bottom {
+  transform: translateY(-100%);
+  animation: show-bottom 0.5s 1.4s forwards;
+}
+@keyframes show-top {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes show-bottom {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .top,
+  .bottom {
+    animation: none;
+    transform: none;
+  }
+}
