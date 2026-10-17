@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import { readdirSync } from "node:fs";
 
 const demos = readdirSync("apps", { withFileTypes: true })
-  .filter((item) => item.isDirectory())
+  .filter((item) => item.isDirectory() && item.name !== "playground")
   .map((item) => item.name);
 
 for (const demo of demos) {

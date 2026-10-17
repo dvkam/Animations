@@ -1,0 +1,288 @@
+:global(*) {
+  box-sizing: border-box;
+}
+:global(body) {
+  margin: 0;
+  background: #f6f5f1;
+  color: #262925;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.55;
+}
+:global(button),
+:global(a) {
+  -webkit-tap-highlight-color: transparent;
+}
+:global(button) {
+  font: inherit;
+  cursor: pointer;
+}
+:global(a) {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+:global(:focus-visible) {
+  outline: 3px solid #315d48;
+  outline-offset: 4px;
+}
+.shell {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  min-height: 100svh;
+}
+.sidebar {
+  padding: 32px 20px;
+  border-right: 1px solid #d9dcd3;
+  background: #edeee8;
+}
+.brand {
+  display: block;
+  padding: 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  text-decoration: none;
+}
+.brand span {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #5f675d;
+}
+.label {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 12px 12px;
+  font-size: 12px;
+  color: #5f675d;
+}
+.navigation ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+.navigation a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  border-radius: 6px;
+  padding: 9px 12px;
+  text-decoration: none;
+  font-size: 13px;
+}
+.navigation a[aria-current] {
+  background: #244b3a;
+  color: white;
+}
+.number {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.75;
+}
+.sidebarNote {
+  margin: 36px 12px 0;
+  color: #5f675d;
+  font-size: 12px;
+}
+.main {
+  min-width: 0;
+  padding: 44px clamp(20px, 4vw, 64px) 24px;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+.heading {
+  margin-bottom: 28px;
+}
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #52634f;
+}
+.heading h1 {
+  margin: 10px 0;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+  text-wrap: balance;
+}
+.heading > p:last-child {
+  color: #5c645a;
+  max-width: 65ch;
+  margin: 12px 0 0;
+}
+.preview {
+  border: 1px solid #cfd5ca;
+  border-radius: 10px;
+  overflow: clip;
+  background: #fff;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #d9dcd3;
+}
+.toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.toolbar button,
+.toolbar a {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  text-decoration: none;
+  color: #354033;
+}
+.toolbar button[aria-pressed="true"] {
+  background: #e9eee6;
+  border-color: #cdd7c8;
+}
+.stage {
+  padding: 16px;
+  background: #e6e8e2;
+}
+.frame {
+  display: block;
+  width: 100%;
+  height: 620px;
+  border: 1px solid #d0d5ca;
+  background: #fff;
+  margin: 0 auto;
+}
+.frame[data-narrow="true"] {
+  max-width: 390px;
+}
+.hint {
+  padding: 12px 16px;
+  margin: 0;
+  font-size: 12px;
+  color: #5c645a;
+}
+.notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 30px;
+}
+.notes h2 {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+.notes p {
+  font-size: 13px;
+  color: #5c645a;
+  margin: 0 0 10px;
+}
+.footer {
+  margin-top: 24px;
+  border-top: 1px solid #d9dcd3;
+  padding-top: 18px;
+  font-size: 12px;
+  color: #52634f;
+}
+.menuToggle {
+  display: none;
+}
+.srOnly,
+.skip:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.skip:focus {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: white;
+  padding: 12px;
+}
+@media (hover: hover) {
+  .navigation a:not([aria-current]):hover,
+  .toolbar a:hover,
+  .toolbar button:hover {
+    background: #dce3d7;
+  }
+}
+@media (max-width: 1000px) {
+  .notes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 760px) {
+  .shell {
+    display: block;
+  }
+  .sidebar {
+    padding: 20px;
+    border-right: 0;
+    border-bottom: 1px solid #d9dcd3;
+  }
+  .brand {
+    padding: 0;
+  }
+  .menuToggle {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 0 0;
+    border: 0;
+    background: transparent;
+    color: #354033;
+  }
+  .navigation[data-open="false"],
+  .sidebarNote {
+    display: none;
+  }
+  .label {
+    margin-top: 20px;
+  }
+  .main {
+    padding: 28px 16px;
+  }
+  .stage {
+    padding: 0;
+  }
+  .frame {
+    border: 0;
+    height: 580px;
+  }
+  .toolbar {
+    padding: 6px;
+  }
+  .toolbar button,
+  .toolbar a {
+    padding-inline: 7px;
+  }
+}
+
+.toolbar fieldset {
+  display: flex;
+  gap: 4px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}

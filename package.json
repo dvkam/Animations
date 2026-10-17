@@ -4,13 +4,15 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter @animations/apple-animation dev",
-    "build": "pnpm -r --if-present build",
+    "build": "pnpm catalog && pnpm -r --if-present build && node scripts/build-site.mjs",
     "typecheck": "tsc --noEmit && pnpm -r --if-present typecheck",
-    "lint": "oxlint --deny-warnings . && node scripts/check-boundaries.mjs",
+    "lint": "oxlint --deny-warnings . && node scripts/check-boundaries.mjs && node scripts/catalog.mjs --check",
     "format": "oxfmt --write .",
     "format:check": "oxfmt --check .",
     "test": "playwright test",
-    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm build && pnpm test"
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm build && pnpm test",
+    "catalog": "node scripts/catalog.mjs",
+    "playground": "pnpm build && node scripts/serve-demos.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",
