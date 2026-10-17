@@ -1,0 +1,46 @@
+.demo {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  text-align: center;
+}
+.spacer {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+.title {
+  font-weight: 400;
+  font-size: clamp(1.8rem, 6vw, 42px);
+  margin: 2rem 0;
+}
+.word {
+  position: relative;
+  white-space: nowrap;
+}
+.underline {
+  position: absolute;
+  width: 110%;
+  height: 20px;
+  bottom: -8px;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.path {
+  stroke: #fb9f18;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 390;
+  stroke-dashoffset: 390;
+  transition: stroke-dashoffset 1s;
+}
+.path[data-active="true"] {
+  stroke-dashoffset: 60;
+}
+@media (prefers-reduced-motion: reduce) {
+  .path {
+    transition: none;
+    stroke-dashoffset: 60;
+  }
+}

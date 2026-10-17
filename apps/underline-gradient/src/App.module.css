@@ -1,0 +1,47 @@
+.page {
+  padding: 0;
+  color: rgba(0, 0, 0, 0.87);
+}
+.page h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 10vw;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.5;
+}
+.page p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+.underline {
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.underline:focus-visible {
+  background-size: 100% 88%;
+  transition: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .underline:hover {
+    background-size: 100% 88%;
+  }
+}
+@media (min-width: 40em) {
+  .page h1 {
+    font-size: 6vw;
+  }
+  .page p {
+    font-size: max(1rem, 1.75vw);
+  }
+}
+
+.underline[data-active="true"] {
+  background-size: 100% 88%;
+}

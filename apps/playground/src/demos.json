@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "3D-image-hover",
+    "title": "3D image hover",
+    "description": "An image tilts in depth when you point at it.",
+    "how": "CSS perspective gives the square image depth. Its transform changes from 70 degrees to 20 degrees over 0.8 seconds. A rotated lower face adds thickness.",
+    "interaction": "Hover over the image. To toggle the lifted state, tap it or focus its button and press Enter or Space.",
+    "accessibility": "Reduced motion keeps the image at a fixed 20-degree angle. The image button has a visible focus outline."
+  },
+  {
+    "slug": "animated-underline",
+    "title": "Animated underline",
+    "description": "A curved underline draws beneath text as the section enters view.",
+    "how": "An IntersectionObserver activates the heading at 75% visibility. CSS changes the SVG stroke dash offset from 390 to 60 over one second.",
+    "interaction": "Scroll down to draw the underline. Scroll away, then return to replay it.",
+    "accessibility": "Reduced motion shows the complete underline without a transition."
+  },
+  {
+    "slug": "apple-animation",
+    "title": "Apple text reveal",
+    "description": "Two text blocks slide into view on opposite sides of a horizontal rule.",
+    "how": "Overflow clips two text blocks. The top block rises for one second, with a pause halfway through. The bottom block starts after 1.4 seconds and slides down for 0.5 seconds.",
+    "interaction": "Open the page to play the sequence. Select Restart demo to replay it.",
+    "accessibility": "Reduced motion shows both text blocks in their final positions. The top phrase has a complete accessible label."
+  },
+  {
+    "slug": "canvas",
+    "title": "Canvas drawing",
+    "description": "A canvas records a freehand stroke as you drag across it.",
+    "how": "Pointer coordinates define rounded blue strokes in the canvas 2D context. Pointer capture keeps a stroke active outside the canvas. Stored points restore the drawing after resize, and the backing resolution follows the display pixel ratio.",
+    "interaction": "Press and drag with a mouse, pen, or finger. Select Clear drawing or Restart demo to erase the strokes.",
+    "accessibility": "Drawing requires a pointer. Text instructions and a named drawing area describe the interaction. Pause autoplay does not stop drawing."
+  },
+  {
+    "slug": "fade-in-text",
+    "title": "Word fade",
+    "description": "Words become visible in sequence as their blur clears.",
+    "how": "Each word fades from zero opacity and 4px blur over 0.8 seconds. Words start 0.1 seconds apart through inline animation delays.",
+    "interaction": "Open the page to play the sequence. Select Restart demo to replay it.",
+    "accessibility": "Reduced motion shows every word without blur. A complete heading label provides the phrase to assistive technology."
+  },
+  {
+    "slug": "gradient-button",
+    "title": "Pointer gradient button",
+    "description": "A radial highlight follows the pointer inside a button.",
+    "how": "A DOM ref updates the position of a nested span without a React render for each pointer move. A second span draws the 200px radial gradient and scales it into view over 0.2 seconds.",
+    "interaction": "Move the pointer over the button. Use Tab to see a centered highlight and focus outline.",
+    "accessibility": "Reduced motion keeps the highlight centered and removes its transition. Pointer tracking remains active when autoplay is paused."
+  },
+  {
+    "slug": "houdini-border",
+    "title": "Animated gradient border",
+    "description": "A colored border rotates around a panel while its background changes opacity.",
+    "how": "CSS registers an angle and an opacity property. Keyframes rotate the four-color conic gradient over four seconds and alternate the background opacity over three seconds. The gradient paints a real border.",
+    "interaction": "Open the page to start the repeating effect. Use Pause autoplay to stop it at its current point.",
+    "accessibility": "Reduced motion shows a fixed gradient border and an opaque background."
+  },
+  {
+    "slug": "img-overlap",
+    "title": "Overlapping images",
+    "description": "Three overlapping images grow and tilt as their section enters view.",
+    "how": "An IntersectionObserver activates the image group at 75% visibility. CSS transforms scale the cards to 1.2 and adjust their angles. The cards start 0.1 seconds apart, with a 0.4-second transition.",
+    "interaction": "Scroll down to expand the image stack. Scroll away, then return to replay it.",
+    "accessibility": "Reduced motion keeps the cards in a fixed overlapping arrangement. A section label describes the decorative images."
+  },
+  {
+    "slug": "img-rotate",
+    "title": "Image rotation",
+    "description": "An image grows and rotates inside a clipped frame.",
+    "how": "The frame clips its image. A 0.3-second transform scales the image to 1.3 and rotates it by five degrees.",
+    "interaction": "Hover over the image. To toggle the rotated state, tap it or focus its button and press Enter or Space.",
+    "accessibility": "Reduced motion keeps the image still. The button has a visible focus outline and the image has alternative text."
+  },
+  {
+    "slug": "text-fade-in",
+    "title": "Letter fade",
+    "description": "Letters move into place and become visible in sequence.",
+    "how": "Each letter moves from a translated, tilted position and fades into view over one second. Inline animation delays stagger characters by six milliseconds. Word wrappers keep normal word boundaries.",
+    "interaction": "Open the page to play the sequence. Select Restart demo to replay it.",
+    "accessibility": "Reduced motion shows every letter in its final position. A separate visually hidden copy exposes the complete phrase to assistive technology."
+  },
+  {
+    "slug": "text-wave",
+    "title": "Text wave",
+    "description": "Letters rise in sequence and return to the baseline.",
+    "how": "CSS keyframes raise each letter by 20px and return it to the baseline in a two-second cycle. Inline animation delays offset successive letters by 0.2 seconds.",
+    "interaction": "Open the page to start the repeating effect. Use Pause autoplay to stop it at its current point.",
+    "accessibility": "Reduced motion leaves the letters on the baseline. A separate visually hidden copy exposes the complete text to assistive technology."
+  },
+  {
+    "slug": "tripple-img-hover",
+    "title": "Triple image hover",
+    "description": "Three stacked images fan out at different angles.",
+    "how": "CSS stacks three framed images and rotates them to 15, 7, and -5 degrees. Their entrance times are 0.5, 0.1, and 0.2 seconds. Each returns over 0.2 seconds.",
+    "interaction": "Hover over the image stack. To toggle the fan, tap it or focus its button and press Enter or Space.",
+    "accessibility": "Reduced motion keeps the images still. The named button has a visible focus outline; its duplicate decorative images have empty alternatives."
+  },
+  {
+    "slug": "typewriter",
+    "title": "Typewriter",
+    "description": "A line appears one character at a time beside a blinking caret.",
+    "how": "A three-second stepped animation expands the text width to 27 monospace characters. It reaches full width at 75% of the cycle, then resets. A separate one-second animation blinks the caret. Width animation preserves the original centered typing effect.",
+    "interaction": "Open the page to start typing. Pause autoplay stops both the text sequence and the caret. Restart demo starts a new cycle.",
+    "accessibility": "Reduced motion shows the complete line and a steady caret. A separate visually hidden copy exposes the complete phrase to assistive technology."
+  },
+  {
+    "slug": "underline-gradient",
+    "title": "Gradient underline",
+    "description": "A gradient underline follows text across one or more lines.",
+    "how": "CSS paints a gradient from the bundled original palette beneath inline text. On interaction, its height grows from 0.2em to 88% over 0.25 seconds. Cloned background decoration keeps the effect on wrapped lines.",
+    "interaction": "Hover over the underlined words or focus them with Tab. Tap, Enter, or Space toggles the highlight. Resize the window to inspect wrapped text.",
+    "accessibility": "Keyboard focus shows the highlight without motion. Reduced motion removes the transition. The text remains available without a network request."
+  }
+]

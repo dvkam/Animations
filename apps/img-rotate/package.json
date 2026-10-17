@@ -1,0 +1,17 @@
+{
+  "name": "@animations/img-rotate",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config ../../vite.config.ts",
+    "build": "tsc --noEmit && vite build --config ../../vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --config ../../vite.config.ts"
+  },
+  "dependencies": {
+    "@animations/demo-runtime": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}

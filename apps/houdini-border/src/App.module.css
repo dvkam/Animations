@@ -1,0 +1,52 @@
+@property --houdini-border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --houdini-panel-opacity {
+  syntax: "<number>";
+  initial-value: 0.5;
+  inherits: false;
+}
+.card {
+  box-sizing: border-box;
+  width: min(400px, calc(100% - 32px));
+  min-height: 300px;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 16px auto;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-size: 1.5em;
+  border: 0.3rem solid transparent;
+  border-image: conic-gradient(
+      from var(--houdini-border-angle, 45deg),
+      #d53e33 0deg 90deg,
+      #fbb300 90deg 180deg,
+      #377af5 180deg 270deg,
+      #399953 270deg 360deg
+    )
+    1 stretch;
+  background: rgb(255 255 255 / var(--houdini-panel-opacity, 0.5));
+  animation:
+    rotate 4s linear infinite,
+    opacity-change 3s infinite alternate;
+}
+@keyframes rotate {
+  to {
+    --houdini-border-angle: 360deg;
+  }
+}
+@keyframes opacity-change {
+  to {
+    --houdini-panel-opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+    --houdini-border-angle: 45deg;
+    --houdini-panel-opacity: 1;
+  }
+}

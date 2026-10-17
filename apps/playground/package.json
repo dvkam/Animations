@@ -1,0 +1,16 @@
+{
+  "name": "@animations/playground",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config ../../vite.config.ts",
+    "build": "tsc --noEmit && vite build --config ../../vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --config ../../vite.config.ts"
+  },
+  "dependencies": {
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  }
+}
