@@ -7,8 +7,8 @@
 - [x] Review the chosen shape against the user request and skill rules.
 - [x] Replace runtime styling and fix behavior in each demo.
 - [x] Verify types, lint, format, builds, and browser behavior.
-- [ ] Review standards and scope independently, fix findings, and commit locally.
-- [ ] Prepare the draft PR description. Do not push.
+- [x] Review standards and scope independently, fix findings, and commit locally.
+- [x] Prepare the draft PR description. Do not push.
 
 ## Problem and usage
 
