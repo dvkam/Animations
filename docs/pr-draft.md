@@ -1,17 +1,24 @@
-# Modernize the animation workspace and remove runtime styling
+# Modernize animation demos and add a GitHub Pages playground
 
-The 14 demos had copied tool configurations, separate npm lockfiles, and runtime CSS-in-JS for mostly static effects. This change moves them into a pnpm workspace, pins current React, Vite, TypeScript, Oxlint, and Oxfmt, and replaces styled-components, Emotion, MUI, and mui-image with CSS Modules and semantic HTML.
+The 14 demos had copied tool configurations, separate npm lockfiles, and runtime CSS-in-JS for mostly static effects. This change moves them into a pnpm workspace and replaces styled-components, Emotion, MUI, and mui-image with CSS Modules and semantic HTML.
 
-The demos keep their key motion sequences. The migration fixes missing gradient text, random selection, canvas pointer capture and resize loss, Houdini support detection, broken placeholders, and reduced-motion behavior. Each demo now has an explanation and source credits. A shared autoplay control pauses keyframes, and keyboard and touch controls expose image effects.
+## Changes
 
-Validation includes strict types, lint, format, all 14 production builds, 77 applicable Chromium desktop/mobile tests, and 39 Firefox tests. Baseline screenshots and computed measurements caught and corrected typography and layout regressions. Firefox checks and detailed limits are in [verification](verification.md). [Fidelity notes](fidelity.md) identify deliberate changes. WebKit needs additional WSL system libraries. No physical-device performance claim is made.
+- Update React, Vite, TypeScript, pnpm, and supporting dependencies. Replace ESLint and Prettier with Oxlint and Oxfmt. Keep shared configuration at the workspace root. Defer Nx because the build graph does not justify it.
+- Preserve the key animation sequences and fix missing gradient text, random selection, canvas pointer capture and resize loss, Houdini support detection, broken placeholders, and reduced-motion behavior.
+- Add autoplay pause and restart controls, keyboard and touch access to image effects, and a README for every demo with behavior, implementation notes, and source credits.
+- Add a minimal sidebar playground. Load only the selected demo in an isolated iframe, with direct links, history, preview width controls, reload, and standalone viewing. Generate descriptions from the READMEs and link source files to the built commit.
+- Build one static site artifact. Run checks on pushes and pull requests. Deploy the shared GitHub Pages site after successful default-branch checks or a manual run. Pull requests do not deploy.
 
-Nx is deferred because the current build graph does not justify it. The original third-party image sources remain credited in [asset sources](asset-sources.md).
+## Validation
 
-This is a local draft. No branch or PR has been pushed or published.
+- Frozen-lockfile install, lint, formatting, strict type checks, and all 15 app production builds passed.
+- 83 Chromium desktop/mobile tests passed, with three intentional device-specific skips. This includes all six playground tests.
+- The migration also passed 39 Firefox tests. Baseline screenshots and computed measurements caught and corrected typography and layout regressions.
+- Final pstack, Matt Pocock standards/spec, and Emil design reviews completed. The final review found and fixed source links for branch previews.
 
-## Playground and Pages
+## Review and setup notes
 
-Add a responsive sidebar playground with one isolated iframe per selected demo. Generate descriptions and instructions from the demo READMEs. Support direct links, browser history, preview width controls, reload, and standalone viewing. Build one static artifact and deploy it to the shared GitHub Pages site after checks pass on the default branch or a manual run. Pull requests build and test without deployment. Pages must be enabled in repository settings after push.
+GitHub Pages must use GitHub Actions as its source in repository settings. A manual deployment replaces the shared site and must satisfy the github-pages environment branch rules. Hosted deployment remains unverified until the workflow runs.
 
-Simplify the playground shell with neutral colors, compact typography, an unfilled selection marker, and a larger preview. Keep instructions visible and place implementation and accessibility notes in a native disclosure.
+WebKit requires additional WSL system libraries. No physical-device performance or pixel-equivalence claim is made. See [verification](docs/verification.md), [fidelity notes](docs/fidelity.md), [asset sources](docs/asset-sources.md), and [playground setup](docs/playground.md) for the evidence and limits.

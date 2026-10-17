@@ -139,7 +139,9 @@ function Playground() {
           </div>
         </details>
         <footer className={styles.footer}>
-          <a href={`https://github.com/dvkam/Animations/tree/HEAD/apps/${demo.slug}`}>
+          <a
+            href={`https://github.com/dvkam/Animations/tree/${import.meta.env.VITE_SOURCE_COMMIT}/apps/${demo.slug}`}
+          >
             Source and credits ↗
           </a>
         </footer>
